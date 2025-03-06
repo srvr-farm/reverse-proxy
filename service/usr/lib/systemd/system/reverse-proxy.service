@@ -1,0 +1,19 @@
+[Unit]
+Description=Reverse Web Proxy - *.srvr.farm
+After=local-fs.target network.target docker.service
+Requires=network.target docker.service
+Wants=local-fs.target
+
+[Service]
+Restart=always
+RestartSec=10
+Type=simple
+TimeoutStopSec=120s
+User=root
+ExecStart=/opt/reverse-proxy/bin/start.sh
+ExecStop=/opt/reverse-proxy/bin/stop.sh
+KillMode=mixed
+
+[Install]
+WantedBy=multi-user.target
+
