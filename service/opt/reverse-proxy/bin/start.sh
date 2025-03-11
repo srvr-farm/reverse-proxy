@@ -13,6 +13,7 @@ docker run --rm \
 	--net reverse-proxy-net \
 	--name reverse-proxy \
 	-p 10.0.0.10:443:443 \
+	-p 10.0.0.10:80:80 \
 	--volume /srv/reverse-proxy/conf.d:/etc/nginx/conf.d:ro \
 	--volume /srv/reverse-proxy/certs:/etc/nginx/certs:ro \
 	nginx:latest ;
