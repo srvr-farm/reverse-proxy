@@ -2,9 +2,10 @@
 .PHONY: install
 
 install:
-	mkdir -p /srv/reverse-proxy/html /srv/reverse-proxy/conf.d /opt/reverse-proxy/bin
+	mkdir -p /srv/reverse-proxy/etc /srv/reverse-proxy/html /srv/reverse-proxy/conf.d /opt/reverse-proxy/bin
 	cp -R service/srv/reverse-proxy/conf.d/* /srv/reverse-proxy/conf.d
 	cp -R service/opt/reverse-proxy/bin/* /opt/reverse-proxy/bin
+	cp service/etc/nginx/nginx.conf /srv/reverse-proxy/etc/nginx.conf
 	chmod +x /opt/reverse-proxy/bin/*
 	cp service/usr/lib/systemd/system/reverse-proxy.service /usr/lib/systemd/system/
 	systemctl daemon-reload
