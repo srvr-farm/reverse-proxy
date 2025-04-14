@@ -15,8 +15,6 @@ docker run --rm \
 	-p 10.0.0.10:443:443 \
 	-p 10.0.0.10:80:80 \
 	-p 10.0.0.10:25565:25565 \
-	--volume /srv/reverse-proxy/conf.d:/etc/nginx/conf.d:ro \
 	--volume /srv/reverse-proxy/certs:/etc/nginx/certs:ro \
-	--volume /srv/reverse-proxy/etc/nginx.conf:/etc/nginx/nginx.conf:ro \
-	nginx:latest ;
+	registry.srvr.farm/reverse-proxy:latest ;
 
