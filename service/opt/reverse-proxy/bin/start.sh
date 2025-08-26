@@ -7,7 +7,6 @@ test -f /srv/reverse-proxy/certs/privkey.pem || cp /etc/letsencrypt/live/srvr.fa
 
 docker network create -d bridge reverse-proxy-net
 
-docker pull nginx:latest
 docker container rm -f reverse-proxy 2>/dev/null || true;
 docker run --rm \
 	--net reverse-proxy-net \
