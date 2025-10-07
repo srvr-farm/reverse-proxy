@@ -2,8 +2,8 @@
 
 
 mkdir -p /srv/reverse-proxy/certs
-test -f /srv/reverse-proxy/certs/fullchain.pem || cp /etc/letsencrypt/live/srvr.farm/fullchain.pem /srv/reverse-proxy/certs/
-test -f /srv/reverse-proxy/certs/privkey.pem || cp /etc/letsencrypt/live/srvr.farm/privkey.pem /srv/reverse-proxy/certs/
+cp /etc/letsencrypt/live/srvr.farm-0001/fullchain.pem /srv/reverse-proxy/certs/
+cp /etc/letsencrypt/live/srvr.farm-0001/privkey.pem /srv/reverse-proxy/certs/
 
 docker network create -d bridge reverse-proxy-net
 
