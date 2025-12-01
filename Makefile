@@ -21,5 +21,5 @@ docker-push:
 	docker push registry.srvr.farm/reverse-proxy:latest ;
 
 certs:
-	cp /etc/letsencrypt/archive/srvr.farm-0001/fullchain1.pem /srv/reverse-proxy/certs/fullchain.pem
-	cp /etc/letsencrypt/archive/srvr.farm-0001/privkey1.pem /srv/reverse-proxy/certs/privkey.pem
+	cp /etc/letsencrypt/archive/srvr.farm/fullchain1.pem /srv/reverse-proxy/certs/fullchain.pem
+	cp /etc/letsencrypt/archive/srvr.farm/privkey1.pem /srv/reverse-proxy/certs/privkey.pem
